@@ -2,6 +2,27 @@ require('pry-byebug')
 require_relative('../models/student')
 
 Student.delete_all()
+House.delete_all()
+
+house1 = House.new({
+    "name" => "Gryffindor",
+    "url" => "hello"
+})
+
+house2 = House.new({
+    "name" => "Ravenclaw",
+    "url" => "hello"
+})
+
+house3 = House.new({
+    "name" => "Hufflepuff",
+    "url" => "hello"
+})
+
+house4 = House.new({
+    "name" => "Slytherin",
+    "url" => "hello"
+})
 
 student1 = Student.new({
     "first_name" => "Jane",
