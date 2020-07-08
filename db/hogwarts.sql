@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS houses;
 DROP TABLE IF EXISTS students;
 
-CREATE TABLE house (
+CREATE TABLE houses (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     url VARCHAR(255)
