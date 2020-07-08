@@ -1,8 +1,9 @@
 require_relative('../db/sql_runner')
+require_relative('./student')
 
 class House
 
-    attr_reader :name, :url, :id
+    attr_accessor :name, :url, :id
  
     def initialize(options)
         @id = options['id'].to_i if options['id']
@@ -31,7 +32,7 @@ class House
         return house_data.map{ |house| House.new(house) }
     end
 
-    def find_by_id(id)
+    def self.find_by_id(id)
         sql = "SELECT * FROM
         houses WHERE ID = $1"
         values = [@id]
