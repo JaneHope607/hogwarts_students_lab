@@ -10,4 +10,14 @@ class House
         @url = options['url']
     end
 
+    def save()
+        sql = "INSERT INTO houses
+        (name, url) 
+        VALUES ($1, $2)
+        RETURNING id"
+        values = [@name, @url]
+        result = SqlRunner.run(sql, values).first
+        @id = result['id'].to_i
+    end
+
 end
