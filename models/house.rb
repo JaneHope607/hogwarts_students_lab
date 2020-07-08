@@ -35,7 +35,7 @@ class House
     def self.find_by_id(id)
         sql = "SELECT * FROM
         houses WHERE ID = $1"
-        values = [@id]
+        values = [id]
         house_data = SqlRunner.run(sql, values).first
         return House.new(house_data)
     end
